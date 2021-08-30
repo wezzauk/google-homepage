@@ -1,0 +1,63 @@
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr 1fr;
+    height: 90vh;
+    grid-template-areas:
+        "left-nav . right-nav"
+        ". google-img ."
+        ". search ."
+        "country . ."
+        "footer footer footer";
+}
+
+.top-left-nav {
+    background: blue;
+    grid-area: left-nav;
+}
+
+.top-right-nav {
+    background: pink;
+    grid-area: right-nav;
+}
+
+.google-img {
+    background: blueviolet;
+    grid-area: google-img;
+    justify-self: center;
+}
+
+.search-bar {
+    background: chocolate;
+    grid-area: search;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "search-box search-box"
+        "search-buttons search-buttons";
+
+}
+#search-box {
+    background: white;
+    border-radius: 25px;
+    border-width: 3px;
+    border-color: rgb(158, 158, 160);
+    height: 50px;
+    grid-area: search-box;
+}
+.search-buttons {
+    background: green;
+    grid-area: search-buttons;
+}
+
+.country {
+    background: darkgreen;
+    grid-area: country;
+
+}
+
+.footer {
+    background: darkred;
+    grid-area: footer;
+}
