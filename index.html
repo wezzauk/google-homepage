@@ -8,18 +8,20 @@
     </head>
     <body>
         <main>
-            <div class="top-left-nav">
+            <div class="left-nav">
                 <p>About Store</p>
             </div>
-            <div class="top-right-nav">
-                <p>Gmail Images Options-dot Sign-in button</p>
+            <div class="right-nav">
+                <p>Gmail Images</p>
+                <img id="option-dots" src="data:image/png;base64,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" alt="Options-dots">
+                <button id="signin-button">Sign in</button>
             </div>
             <div class="google-img">
                 <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo">
             </div>
             <div class="search-bar">
                 <input type="text" id="search-box" name="search">
-                <p class="search-buttons">Search buttons</p>
+                <button id="search-button">Google Search</button><button id="lucky-button">I'm feeling Lucky</button>
             </div>
             <div class="country">
                 <p>country</p>

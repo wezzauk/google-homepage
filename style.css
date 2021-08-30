@@ -1,7 +1,11 @@
+body {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+}
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
     height: 90vh;
     grid-template-areas:
         "left-nav . right-nav"
@@ -11,14 +15,31 @@ main {
         "footer footer footer";
 }
 
-.top-left-nav {
+.left-nav {
     background: blue;
     grid-area: left-nav;
 }
 
-.top-right-nav {
+.right-nav {
     background: pink;
     grid-area: right-nav;
+    display: grid;
+    grid-template-columns: 1fr 100px 1fr;
+    grid-template-rows: 100px;
+    grid-template-areas: "top-right-links option-dots signin-button";
+    justify-self: end;
+}
+
+#option-dots {
+    width: 20px;
+}
+
+#signin-button {
+    background: #1a73e8;
+    border-radius: 7px;
+    height: 45px;
+    width: 120px;
+    color: white;
 }
 
 .google-img {
@@ -32,10 +53,10 @@ main {
     grid-area: search;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     grid-template-areas:
         "search-box search-box"
-        "search-buttons search-buttons";
+        "search-button lucky-button";
+    grid-gap: 20px;
 
 }
 #search-box {
@@ -46,11 +67,22 @@ main {
     height: 50px;
     grid-area: search-box;
 }
-.search-buttons {
+#search-button {
     background: green;
-    grid-area: search-buttons;
+    grid-area: search-button;
+    border-radius: 5px;
+    width: 150px;
+    height: 45px;
+    justify-self: end;
 }
-
+#lucky-button {
+    background: yellow;
+    grid-area: lucky-button;
+    border-radius: 5px;
+    width: 150px;
+    height: 45px;
+    justify-self: start;
+}
 .country {
     background: darkgreen;
     grid-area: country;
