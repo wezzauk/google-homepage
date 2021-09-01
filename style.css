@@ -15,24 +15,50 @@ main {
         "footer footer footer";
 }
 
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    color: #202124;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 .left-nav {
     grid-area: left-nav;
     padding-left: 20px;
+    padding-top: 15px;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: "lt-link-1 lt-link-2";
+}
+
+#lt-link-1, #lt-link-2 {
+    color: black;
+    align-self: center;
 }
 
 .right-nav {
     grid-area: right-nav;
     display: grid;
-    grid-template-columns: 1fr 50px 1fr;
+    grid-template-columns: 1fr 80px 50px 150px;
     grid-template-rows: 50px;
-    grid-template-areas: "top-right-links option-dots signin-button";
-    justify-self: end;
+    grid-template-areas: "rt-link-1 rt-link-2 option-dots signin-button";
+    justify-items: end;
     padding-right: 20px;
+}
+
+#rt-link-1, #rt-link-2 {
+    color: black;
+    align-self: center;
 }
 
 #option-dots {
     width: 20px;
     padding-top: 15px;
+    grid-area: option-dots;
 }
 
 #signin-button {
@@ -41,6 +67,7 @@ main {
     height: 45px;
     width: 120px;
     color: white;
+    grid-area: signin-button;
 }
 
 .google-img {
@@ -58,18 +85,16 @@ main {
     grid-gap: 20px;
     justify-self: center;
     align-items: start;
-
+    padding-top: 20px;
 }
 #search-box {
     border-radius: 25px;
     border-width: 3px;
-    border-color: rgb(158, 158, 160);
     min-width: 450px;
     height: 50px;
     grid-area: search-box;
     justify-self: center;
-    border-color: #dfe1e5;
-    border-width: 1px;
+    border: 1px solid #dfe1e5;
 }
 #search-button {
     grid-area: search-button;
@@ -79,12 +104,14 @@ main {
     justify-self: end;
     color: #202124;
     background-color: #f8f9fa;
-    border: solid;
-    border-color: #dadce0;
-    border-width: 1px;
+    border: 0px solid #dadce0;
+
 }
+#search-button:hover {
+    border: 1px solid rgb(212, 212, 221);
+}
+
 #lucky-button {
-    background: yellow;
     grid-area: lucky-button;
     border-radius: 5px;
     width: 150px;
@@ -92,10 +119,12 @@ main {
     justify-self: start;
     color: #202124;
     background-color: #f8f9fa;
-    border: solid;
-    border-color: #dadce0;
-    border-width: 1px;
+    border: 1px solid #f8f9fa;
 }
+#lucky-button:hover {
+    border: 1px solid rgb(212, 212, 221);
+}
+
 .country {
     background: #edece8;
     color: #70757a;
@@ -111,24 +140,39 @@ main {
     grid-area: footer;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 60px;
     grid-template-areas: "left-foot mid-foot right-foot";
     color: #70757a;
+
 }
 
-#left-footer {
+.left-footer {
     grid-area: left-foot;
-    justify-self: start;
+    display: grid;
+    grid-template-columns: 100px 100px 120px;
+    grid-template-areas: "lt-foot-link-1 lt-foot-link-2 lt-foot-link-3";
     padding-left: 20px;
+    align-self: center;
+}
+#lt-foot-link-1, #lt-foot-link-2, #lt-foot-link-3 {
+    color: #70757a;
+
 }
 
-#middle-footer {
+.middle-footer {
     grid-area: mid-foot;
+    color: #70757a;
+    align-self: center;
     justify-self: center;
 }
 
-#right-footer {
+.right-footer {
     grid-area : right-foot;
+    grid-template-columns: 100px 100px 100px;
+    grid-template-areas: "rt-foot-link-1 rt-foot-link-2 rt-foot-link-3";
     justify-self: end;
     padding-right: 20px;
+    align-self: center;
+
 }
+#rt-foot-link-1, #rt-foot-link-2, #rt-foot-link-3 {
+    color: #70757a;
