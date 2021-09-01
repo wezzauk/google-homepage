@@ -5,7 +5,7 @@ body {
 main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 200px 125px 150px 1fr 60px;
+    grid-template-rows: 200px 125px 220px 1fr 60px;
     height: 100vh;
     grid-template-areas:
         "left-nav . right-nav"
@@ -80,22 +80,33 @@ a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
-        "search-box search-box"
+        "searchbox searchbox"
         "search-button lucky-button";
     grid-gap: 20px;
     justify-self: center;
     align-items: start;
     padding-top: 20px;
 }
-#search-box {
+.search-box {
     border-radius: 25px;
     border-width: 3px;
-    min-width: 450px;
-    height: 50px;
-    grid-area: search-box;
+    min-width: 500px;
+    height: 45px;
+    grid-area: searchbox;
     justify-self: center;
     border: 1px solid #dfe1e5;
+    padding-left: 45px;
+
 }
+
+#search-box {
+    background: white url(search.svg) center no-repeat;
+    background-position: 3%
+}
+.search-box:hover {
+    box-shadow: 1px 1px 5px rgb(191, 191, 194);
+}
+
 #search-button {
     grid-area: search-button;
     border-radius: 5px;
@@ -167,7 +178,8 @@ a:hover {
 
 .right-footer {
     grid-area : right-foot;
-    grid-template-columns: 100px 100px 100px;
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
     grid-template-areas: "rt-foot-link-1 rt-foot-link-2 rt-foot-link-3";
     justify-self: end;
     padding-right: 20px;
@@ -176,3 +188,4 @@ a:hover {
 }
 #rt-foot-link-1, #rt-foot-link-2, #rt-foot-link-3 {
     color: #70757a;
+}
